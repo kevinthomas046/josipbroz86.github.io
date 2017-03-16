@@ -1,11 +1,6 @@
 <!doctype html>
 <html>
     <head>
-        
-        <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
-        <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
-        
-        
     <title> Advanced GIS Project Page </title>
         <style>
             strong, p {
@@ -23,37 +18,19 @@
                 color: goldenrod;
                 font-style: italic;
             }
-            #map {
-                height: 75%;
-                width: 75%;
-            }
         </style>
     </head>
-    
-    
-    
     <body> 
         <center>
         <span class="page-title"> Tracking the use of landmines against a specific demographic  </span>
-        </center>
-            
-        <div id="map"></div>  
-        <script>
-        
-            $(document).ready(function () {
-               cartodb.createVis('map', 'http://thenewschool.carto.com/u/stanm282/api/v2/viz/655d3678-fbaf-11e6-a8d7-0e98b61680bf/viz.json'); 
-                                  
-            });
-        
-            </script>
-	    
+
+	 <iframe width="75%" height="520" frameborder="0" src="https://thenewschool.carto.com/u/stanm282/builder/655d3678-fbaf-11e6-a8d7-0e98b61680bf/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe> 
 
 <p>
 The 'suspicious surface' data was derived from the map created by <a href="http://www.bhmac.org" target="_blank">Bosnia and Herzegovina Mine Action Center</a>, seen below:
 </p> 
         <br>
         <img src="http://www.bhmac.org/mapa.jpg" style="width:30%;height:30%;"/>
-        
+        </center>
     </body>
 </html>
-
