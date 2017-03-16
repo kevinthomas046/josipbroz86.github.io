@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+    <head>
+        
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+        <!--
+            Load Carto's code so we can pull in our Carto maps.
+        -->
+        <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodbui/assets/4.6.25/stylesheets/deep_insights.css">
+        <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css">
+        <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodbui/assets/4.6.25/stylesheets/public_editor3.css">
+        <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
+        
+        
+    <title> Advanced GIS Project Page </title>
+        <style>
+            strong, p {
+                font-family: sans-serif;
+                font-size: 16px;
+                color: black;
+                font-weight: bold;
+            }
+            a {
+                color: red;
+                font-style: italic;
+            }
+            .page-title {
+                font-size: 32px;
+                color: goldenrod;
+                font-style: italic;
+            }
+            #map {
+                height: 850px;
+                width: 1200px;
+            }
+        </style>
+    </head>
+    
+    
+    
+    <body> 
+        <center>
+        <span class="page-title"> Tracking the use of landmines against a specific demographic  </span>
+    
+            
+            <div id="map"></div>
+            <div class="buttons">
+                <button class="suspicious-surface">Suspicious Surface</button>
+                <button class="Reset">Reset</button>
+            </div>
+            
+        <script>
+            var uxo_shapeLayer;
+            $(document).ready(function () {
+               
+                cartodb.createVis('map', 'https://thenewschool.carto.com/u/stanm282/api/v2/viz/655d3678-fbaf-11e6-a8d7-0e98b61680bf/viz.json')
+                    .done(function (vis, layers) {
+                        
+                        uxo_shapeLayer = layers[3].getSubLayer(0);
+                    });
+
+            
+                $('.suspicious-surface').click(function () {
+                    uxo_shapeLayer.setSQL("SELECT * FROM uxo_shape WHERE id = '0'");
+                });
+                $('.reset').click(function () {
+                    uxo_shapeLayer.setSQL("SELECT * FROM uxo_shape");
+                });
+            });
+        </script>
+	    
+
+<p>
+The 'suspicious surface' data was derived from the map created by <a href="http://www.bhmac.org" target="_blank">Bosnia and Herzegovina Mine Action Center</a>, seen below:
+</p> 
+        <br>
+            <img src="http://www.bhmac.org/mapa.jpg" style="width:65%;height:65%;"/> </center>
+        
+    </body>
+</html>
+
