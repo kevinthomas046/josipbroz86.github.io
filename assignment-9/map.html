@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+        
+        <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        
+ <title> Advanced GIS Project Page </title>
+        <style>
+            strong, p {
+                font-family: sans-serif;
+                font-size: 16px;
+                color: black;
+                font-weight: bold;
+            }
+            a {
+                color: red;
+                font-style: italic;
+            }
+            .page-title {
+                font-size: 32px;
+                color: goldenrod;
+                font-style: italic;
+            }
+            #map {
+                height: 850px;
+                width: 1200px;
+            }
+        </style>
+    </head>
+    
+    
+    
+    <body> 
+        <center>
+        <span class="page-title"> Violence Against Civilians: Africa  </span>
+        <div id="map">
+         
+        </div>
+        
+        <div class="buttons">
+        <button class="country-somalia">Somalia</button>
+        <button class="country-egypt">Egypt</button>
+        <button class="country-eritrea">Eritrea</button>
+        <button class="country-burundi">Burundi</button>
+        <button class="reset">Reset</button>
+        </div>
+        <br>   
+        <select class="country-picker">
+            <option value="all">All Countries</option>
+            <option value="somalia-drop">Somalia</option>
+            <option value="egypt-drop">Egypt</option>
+            <option value="eritrea-drop">Eritrea</option>
+            <option value="burundi-drop">Burundi</option>
+        </select>
+        
+        <script>
+        
+            var AfricaLayer;
+            $(document).ready(function () {
+               cartodb.createVis('map', 'https://thenewschool.carto.com/u/stanm282/api/v2/viz/ce4185f4-ed63-11e6-b8a5-0e98b61680bf/viz.json')
+               .done(function (vis, layers) {
+                   AfricaLayer = layers[1].getSubLayer(0);
+               });
+                
+                $('.country-somalia').click(function (){
+                 AfricaLayer.setSQL("SELECT * FROM stanm282.acled_version_7_all_africa_1997_2016_rebel_forces WHERE country = 'Somalia'");   
+                });
+                $('.country-egypt').click(function (){
+                 AfricaLayer.setSQL("SELECT * FROM stanm282.acled_version_7_all_africa_1997_2016_rebel_forces WHERE country = 'Egypt'");   
+                });
+                $('.country-eritrea').click(function (){
+                 AfricaLayer.setSQL("SELECT * FROM stanm282.acled_version_7_all_africa_1997_2016_rebel_forces WHERE country = 'Eritrea'");   
+                });
+                $('.country-burundi').click(function (){
+                 AfricaLayer.setSQL("SELECT * FROM stanm282.acled_version_7_all_africa_1997_2016_rebel_forces WHERE country = 'Burundi'");   
+                });
+                $('.reset').click(function () {
+                    AfricaLayer.setSQL("SELECT * FROM stanm282.acled_version_7_all_africa_1997_2016_rebel_forces");
+                });
+                
+                $('.country-picker').change(function () {
+                    var type = $(this).val();
+                    var sql;
+                    if (type === 'all') {
+                        sql = "SELECT * FROM stanm282.acled_version_7_all_africa_1997_2016_rebel_forces";
+                    }
+                    
+                    var type = $(this).val();
+                    var sql;
+                    if (type === 'somalia-drop') {
+                        sql = "SELECT * FROM stanm282.acled_version_7_all_africa_1997_2016_rebel_forces WHERE country = 'Somalia'";
+                    }
+                    
+                    var type = $(this).val();
+                    var sql;
+                    if (type === 'egypt-drop') {
+                        sql = "SELECT * FROM stanm282.acled_version_7_all_africa_1997_2016_rebel_forces WHERE country = 'Egypt'";
+                    }
+                    
+                    var type = $(this).val();
+                    var sql;
+                    if (type === 'eritrea-drop') {
+                        sql = "SELECT * FROM stanm282.acled_version_7_all_africa_1997_2016_rebel_forces WHERE country = 'Eritrea'";
+                    }
+                    
+                    var type = $(this).val();
+                    var sql;
+                    if (type === 'burundi-drop') {
+                        sql = "SELECT * FROM stanm282.acled_version_7_all_africa_1997_2016_rebel_forces WHERE country = 'Burundi'";
+                    }
+                    
+                    AfricaLayer.setSQL(sql);
+                });
+            });
+        
+            </script>
+    </body>
+</html>
+    
+    
+        
+
+
