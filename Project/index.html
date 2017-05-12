@@ -58,8 +58,52 @@
     Go to your map in CartoDB, click on share, and copy the URL undert the API section
     Check the cartodb.js documentation for more info
     http://developers.cartodb.com/documentation/cartodb-js.html-->
-    <script type="text/javascript">
-      cartodb.createVis('map', 'https://thenewschool.carto.com/u/stanm282/api/v2/viz/29017e14-34df-11e7-b841-0ef7f98ade21/viz.json');
+    <script>
+        
+      var bosnia1991layerdataLayer;
+      var LandminesLayer;
+      var bih2013layerdataLayer;
+      
+      $(document).ready(function () {
+        cartodb.createVis('map', 'https://thenewschool.carto.com/u/stanm282/api/v2/viz/29017e14-34df-11e7-b841-0ef7f98ade21/viz.json',
+                          {
+            zoom: 7.5,
+            cartodb_logo: false,
+        })
+                
+        
+          .done(function (vis, layers) {
+            
+            bosnia1991layerdataLayer = layers[1].getSubLayer(1);
+            LandminesLayer = layers[1].getSubLayer(2);
+          
+          });
+            
+             
+
+        $('.1991-checkbox').change(function () {
+          if ($('.1991-checkbox').prop('checked')) {
+            // If checked, show the layer
+            bosnia1991layerdataLayer.show();
+          }
+          else {
+            // Else, hide it
+            bosnia1991layerdataLayer.hide();
+          }
+        });
+        
+        $('.landmines-checkbox').change(function () {
+          if ($('.landmines-checkbox').prop('checked')) {
+            // If checked, show the layer
+            LandminesLayer.show();
+          }
+          else {
+            // Else, hide it
+            LandminesLayer.hide();
+          }
+        });
+      });
+    
     </script>
 
   </body>
