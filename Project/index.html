@@ -30,8 +30,8 @@
           
         <ul class="checkbox-container">
         <li>
-        <label for="bosnia1991layerdata">BiH 1991 Demographics</label>
-        <input id="bosnia1991layerdata" type="checkbox" class="1991-checkbox"  />
+        <label for="1991data">BiH 1991 Demographics</label>
+        <input id="1991data" type="checkbox" class="1991-checkbox"  />
         </li>
         <li>
         <label for="Landmines">Landmine situation</label>
@@ -63,7 +63,7 @@
     http://developers.cartodb.com/documentation/cartodb-js.html-->
     <script>
         
-      var bosnia1991layerdataLayer;
+      var 1991dataLayer;
       var LandminesLayer;
       var bih2013layerdataLayer;
       
@@ -77,7 +77,7 @@
         
           .done(function (vis, layers) {
             
-            bosnia1991layerdataLayer = layers[1].getSubLayer(1);
+            1991dataLayer = layers[1].getSubLayer(1);
             LandminesLayer = layers[1].getSubLayer(2);
           
           });
@@ -87,11 +87,11 @@
         $('.1991-checkbox').change(function () {
           if ($('.1991-checkbox').prop('checked')) {
             // If checked, show the layer
-            bosnia1991layerdataLayer.show();
+            1991dataLayer.show();
           }
           else {
             // Else, hide it
-            bosnia1991layerdataLayer.hide();
+            1991layerLayer.hide();
           }
         });
         
