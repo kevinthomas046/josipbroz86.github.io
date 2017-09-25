@@ -188,7 +188,7 @@ hr {
 		letter-spacing: 0.20em;
 		font-weight: 700;
 		font-size: 2em;
-		color: #9B0808;
+		color: #39599f;
 	}
 	
 	.title .byline
@@ -256,7 +256,7 @@ hr {
 		margin: 0 auto;
 		padding: 2em 0em;
 		text-transform: uppercase;
-	background: #9B0808;
+	background: #39599f;
 	}
 	
 	#logo h1
@@ -299,7 +299,7 @@ hr {
 
 #menu-wrapper
 {
-	background: #9B0808;
+	background: #39599f;
 }
 
 #menu {
@@ -458,7 +458,7 @@ hr {
 	#portfolio .title h2
 	{
 		font-size: 1.2em;
-		color: #9B0808;
+		color: #39599f;
 	}
 
 	#portfolio .byline
@@ -501,7 +501,7 @@ hr {
 		display: inline-block;
 		margin-top: 1.5em;
 		padding: 0.50em 3em 0.50em 2em;
-		background: #9B0808;
+		background: #39599f;
 		letter-spacing: 0.20em;
 		text-decoration: none;
 		text-transform: uppercase;
