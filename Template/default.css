@@ -185,9 +185,9 @@ hr {
 
 	.title h2
 	{
-		letter-spacing: 0.20em;
-		font-weight: 700;
-		font-size: 2em;
+		letter-spacing: 0.00px;
+		font-weight: 350;
+		font-size: 14px;
 		color: #39599f;
 	}
 	
@@ -457,7 +457,7 @@ hr {
 	
 	#portfolio .title h2
 	{
-		font-size: 1.2em;
+		font-size: 16px;
 		color: #39599f;
 	}
 
