@@ -256,7 +256,8 @@ hr {
 		margin: 0 auto;
 		padding: 2em 0em;
 		text-transform: uppercase;
-	background: #39599f;
+	    background: #39599f;
+        opacity: 50%;
 	}
 	
 	#logo h1
