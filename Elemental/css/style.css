@@ -91,7 +91,7 @@
 	
 		header h2
 		{
-			text-transform: uppercase;
+			text-transform: full-width;
 			color: #15061a;
 		}
 	
