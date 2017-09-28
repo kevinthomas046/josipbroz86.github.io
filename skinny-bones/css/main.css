@@ -5105,3 +5105,7 @@ pre.highlight {
     color: #999;
     text-decoration: none
 }
+#FrontText {
+        width: 800px;
+        height: auto;
+}
